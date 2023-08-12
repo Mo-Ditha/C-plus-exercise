@@ -1,0 +1,137 @@
+#include<iostream.h>
+using namespace std;
+class bank_account
+{
+	public:
+	char name[20];
+	char account_type[30];
+	int account_number;
+	float balance_amount;
+	
+        void fnintial(char a,char b,int c,float c)
+        {
+        	name=a;
+        	account_type=b;
+        	account_number=c;
+        	balance_amount=d;
+        }
+	void fnintial()
+	{
+		cout << "Enter Name of the Depositor:";
+		cin >>name;
+		cout << "Enter Acoount Type:";
+		cin >>account_type;
+		cout << "Enter Account Number:";
+		cin >>account_number;
+		cout >> "Enter Balance amount in the Account:";
+		cin >>balance_amount;	
+	}
+	void fndeposit()
+	{
+		float Deposit_amount;
+		cout >> "Enter the Amount:";
+		cin >>Deposit_amount;
+		balance_amount=balance_amount+Deposit_amount;
+		cout >> "New Account Balance"<<Deposit_amount<<endl;	
+	}
+	void fnwithdraw()
+	{
+		float withdraw_amount;
+		cout << "Your Account Balance:Rs."<<balance_amount<<endl;
+		cin >>withdraw_amount;
+		balance_amount=balance_amount-withdraw_amount;
+		cout >> "Your withdraw:Rs."<<withdraw_amount<<endl;
+	}
+	void fnDisplay()
+	{
+		cout << "Name of the Depositor:"<<name<<endl;
+		cout << "Balance amount in the Account:"<<balance_amount<<endl;
+	}
+};
+int main()
+{
+	int check,cust;
+	cout<<"ENTER account no:";
+	cin>>cust;
+ 	if(cust==1000)
+ 	{
+     	bank_account obj1;
+     	obj1.fninput("Muditha",1000,1,10000);
+     	
+	 	cout<<"\n\n(01).DIPOSIT\n(02).WITHDROW\n(03).CHECK BALANCE\n"<<endl;
+		cout<<"What do you wish to do ?'enter no' - ";
+		cin>>check;
+     	if(check==1)
+ 		{
+	 		obj1.fndeposit();
+	 		obj1.fnDisplay();
+	 	}
+ 		else if(chek==2)
+    	{
+  			obj1.fnwithdraw();
+  			obj1.fnDisplay();
+     	}
+     	else if(chek==3)
+     	{
+  			obj1.fnDisplay();
+     	}
+     	else
+	 	{
+  			cout<<"invalid !!!!"<<endl;
+    	}
+ 	}
+ 	if(cust==1100)
+ 	{
+     	bank_account obj2;
+     	obj2.fninput("Nisal",1100,1,5000);
+     	
+	 	cout<<"\n\n(01).DIPOSIT\n(02).WITHDROW\n(03).CHECK BALANCE\n"<<endl;
+		cout<<"What do you wish to do ?'enter no' - ";
+		cin>>check;
+     	if(check==1)
+ 		{
+	 		obj2.fndeposit();
+	 		obj2.fnDisplay();
+	 	}
+ 		else if(chek==2)
+    	{
+  			obj2.fnwithdraw();
+  			obj2.fnDisplay();
+     	}
+     	else if(chek==3)
+     	{
+  			obj2.fnDisplay();
+     	}
+     	else
+	 	{
+  			cout<<"invalid !!!!"<<endl;
+    	}
+ 	}
+ 	if(cust==1200)
+ 	{
+     	bank_account obj3;
+     	obj3.fninput("Hasaral",1200,2,8000);
+     	
+	 	cout<<"\n\n(01).DIPOSIT\n(02).WITHDROW\n(03).CHECK BALANCE\n"<<endl;
+		cout<<"What do you wish to do ?'enter no' - ";
+		cin>>check;
+     	if(check==1)
+ 		{
+	 		obj3.fndeposit();
+	 		obj3.fnDisplay();
+	 	}
+ 		else if(chek==2)
+    	{
+  			obj3.fnwithdraw();
+  			obj3.fnDisplay();
+     	}
+     	else if(chek==3)
+     	{
+  			obj3.fnDisplay();
+     	}
+     	else
+	 	{
+  			cout<<"invalid !!!!"<<endl;
+    	}
+ 	}return 0;
+}

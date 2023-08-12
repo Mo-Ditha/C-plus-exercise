@@ -1,0 +1,55 @@
+#include<iostream>
+
+using namespace std;
+
+class customer
+{
+ public:
+  int cno;
+  float bill;
+  
+  void setcustomer(int a,float b)
+  {
+  	cno=a;
+  	bill=b;
+  }	
+  void getdata()
+  {
+  	cout<<"Customer no :"<<cno<<endl;
+  	cout<<"Bill amount :"<<bill<<endl;
+  	
+  }
+};
+class loyal_customer:public customer
+{
+ public:
+ int points;
+ void setpoints(int c)
+ {
+  	points=c;
+  	customer ::getdata();
+ 	cout<<"LOYALTY POINTS :"<<points<<endl;
+  	
+ }	
+};
+
+int main()
+{
+	 loyal_customer obj1;
+	 obj1.setcustomer(1,5000);
+	 obj1.setpoints(700);
+	 	 
+}
+
+/*Class Customer has attributes customer_number and bill_amount. The function
+setCustomer() sets values for each attribute of the class customer and function
+getData() displays the number and bill amount of the customer.
+Class Loyalty_Customer has an attribute number_of_loyalty points. The function
+setPoints() sets value for the loyalty points and the function getData() of class
+customer used to display the number, bill amount and loyalty points of the
+LoyaltyCustomer.
+Write an object-oriented program to perform the following operations.
+i. Set the number, bill amount and loyalty points of one Loyalty customer.
+ii. Display the number, bill amount and loyalty points of the Loyalty Customer
+which you set.
+*/

@@ -1,0 +1,43 @@
+
+#include<iostream>
+using namespace std;
+class vehicle
+{
+public:
+    int vnumber;
+    float vprice;
+    void fnsetvehicle(int a,float b)
+    {
+        vnumber=a;
+        vprice=b;
+    }
+};
+class heavy_vehicle : public vehicle
+{
+public:
+    float Drate,Damount,dprice;
+    void fnsethvyvehicle(float c)
+    {
+        Drate=c;
+    }
+    void fncalculate()
+    {
+        Damount=vprice*Drate;
+    }
+    void fndisplay()
+    {
+        dprice=vprice-Damount;
+        cout<<"Discounted price :"<<dprice<<endl;
+    }
+    
+    
+};
+int main()
+{
+    heavy_vehicle obj1;
+    obj1.fnsetvehicle(010,10000);
+    obj1.fnsethvyvehicle(2.2);
+    obj1.fncalculate();
+    obj1.fndisplay();
+    return 0;
+}

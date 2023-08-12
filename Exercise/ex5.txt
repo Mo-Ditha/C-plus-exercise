@@ -1,0 +1,48 @@
+#include<iostream>
+
+class Employee
+{
+private:
+int empId;
+float empSal, empBonus, netSal;
+
+public:
+void fnInput();
+void fnCalculate();
+void fnDisplay();
+};
+
+void Employee::fnInput()
+{
+cout<<"Enter employee id - ";
+cin>>empId;
+cout<< "Enter employee salary - ";
+cin>>empSal;
+cout<< "Enter employee bonuses - ";
+cin>>empBonus;
+}
+
+void Employee::fnCalculate()
+{
+netSal = empSal + empBonus;
+}
+
+void Employee::fnDisplay()
+{
+cout << "Employee id - " <<empId <<"\nEmployee Net Salary - "<<netSal<<endl;
+}
+
+int main()
+{
+Employee ob1,ob2;
+
+ob1.fnInput();
+ob2.fnInput();
+
+ob1.fnCalculate();
+ob2.fnCalculate();
+
+ob1.fnDisplay();
+ob2.fnDisplay();
+return 0;
+}

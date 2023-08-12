@@ -1,0 +1,75 @@
+#include<iostream>
+using namespace std;
+class Bank_account
+{
+	char name[30];
+	char account_type[30];
+	int account_number;
+	float balance_amount;
+	
+	public:
+	Bank_account(char *na,char *act,int c,float d)
+	{
+		strcpy(name,na);
+		strcpy(account_type,act);
+		account_number =c;
+		balance_amount =d;
+	}
+	void fnDeposit();
+	void fnWithdrow();
+	void fnDisplay();
+};
+	void Bank_account::fnDeposit()
+	{
+		float deposit_amount;
+		cout<<"Enter Deposit Amount: ";
+		cin>>deposit_amount;
+		balance_amount=	balance_amount+deposit_amount;	
+	}
+	void Bank_account::fnWithdrow()
+	{
+		float withdrow_amount;
+		
+        cout<<"Withdraw Amount: ";
+        cin>>withdrow_amount;
+        if(withdrow_amount>balance_amount)
+        {
+        	cout<<"Your account balance is insufficient!!!!";
+        }
+        balance_amount = balance_amount - withdrow_amount;
+	}
+	void Bank_account::fnDisplay()
+	{
+        cout << "Name of the Depositor:"<<name<<endl;
+		cout << "Balance amount in the Account:"<<balance_amount<<endl;
+	}
+
+int main()
+{
+	for(int i=0;i<10;i++)
+	{
+		char na[30];
+		char act[30];
+		int c;
+		float d;
+	
+		cout << "Enter Details of "<<i+1<<" Customer"<<endl;
+		cout << "ENTER YOUR DETAILS :";
+		
+	 	cout << "1.Name of depositer or withdrower:";
+	    cin>>na;
+	    cout << "2.Account Type:";
+	    cin>>act;
+	  	cout<< "3.Accout Number:";
+	   	cin>>c;
+	    cout << "4.Acoount Balance:";
+	    cin>>d;
+	    
+	
+		Bank_account bnk(na,act,c,d);
+	
+		bnk.fnDeposit();
+		bnk.fnWithdrow();
+		bnk.fnDisplay();
+	}
+}

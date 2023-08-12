@@ -1,0 +1,49 @@
+
+#include<iostream>
+using namespace std;
+class product
+{
+	public:
+	int quantity;
+	float price;
+	void fnsetdata(int a,float b)
+	{
+		quantity=a;
+		price=b;
+	}
+virtual void functioncalculate()
+{
+	float value;
+    value=price*quantity;
+
+}
+};
+class electronic_product:public product
+{
+	public:
+	float taxrate;
+	void fnsetelec(float c)
+	{
+		taxrate=c;
+
+	}
+	void functioncalculate()
+	{ 
+	float txvalue;
+
+    txvalue=price*taxrate;
+ 	cout <<"tax Rs:"<<txvalue;
+	}
+};
+
+int main()
+{
+	product*ptr;
+	electronic_product obj1;
+	obj1.fnsetdata(1,1000);
+	obj1.fnsetelec(0.2);
+
+	ptr=&obj1;
+	ptr->functioncalculate();
+  	return 0;
+}
